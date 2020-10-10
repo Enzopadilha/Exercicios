@@ -32,7 +32,7 @@
 #### As métricas são caculadas pelo dataset de validação para não ocorrer um overfit dos dados, ou seja treinar bem somente os dados de treino.
 
 12. What is SGD?
-#### stochastic gradient descent, ou descida estocástica do gradiente.
+#### stochastic gradient descent, ou descida estocástica do gradiente. É um mecanismo para atualizar os pesos automaticamente.
 
 13. Why does SGD use mini-batches?
 #### Usa para otimizar os parametros. É usado para calcular a perda média para alguns itens de dados a cada vez e outra vantagem é a perfomance.
@@ -56,6 +56,7 @@
 #### Porque com um alto lerani rate teremos passos muito grandes, o que pode demorar ainda mais para chegarmos num LR bom. 
 
 18. What is a gradient?
+#### O gradiente é um vetor que indica o sentido e a direção na qual vamos se deslocar.
 
 19. Do you need to know how to calculate gradients yourself?
 #### Não, porque o Pytorch é capaz de calcular a derivada de qualquer função, já que o gradiente utiliza derivadas em seu cálculo.
@@ -67,10 +68,15 @@
 
 
 22. What is the difference between a loss function and a metric?
+#### A função loss é calculada para cada item de nosso dataset e no final de um época(epoch) os valores são calculados em média. A métrica são os números com os quais nos preocupamos. Esses valores são impressos no final de cada época que nos diz como nosso modelo está se saindo.
 
 
 23. What is the function to calculate new weights using a learning rate?
-
+for x,y in dl:
+ pred = model(x)
+ loss = loss_func(pred, y)
+ loss.backward()
+ parameters -= parameters.grad * lr
 
 24. What does the DataLoader class do?
 #### DataLoader é uma classe que embaralha e agrupa os mini-batches para voce, ele pode qualquer coleção de Python e transformar em um iterador de muitos batches.
@@ -79,7 +85,9 @@
 
 
 26. Create a function that, if passed two arguments [1,2,3,4] and 'abcd', returns [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]. What is special about that output data structure?
-
+x = [1,2,3,4]
+ds = L(enumerate(x.ascii_lowercase))
+ds
 
 27. What does view do in PyTorch?
 #### 'view' é um método do Pytorch que muda a forma de um tensor, o shape, sem alterar seu conteúdo.
@@ -95,12 +103,13 @@ b = bias
 #### Backward, também chamado de retropropagação, é o nome dado ao processo de calculo da derivada em cada camada.
 
 31. Why do we have to zero the gradients?
-#### 
+
 
 32. What information do we have to pass to Learner?
 
 
 33. Show Python or pseudocode for the basic steps of a training loop.
+
 
 34. What is ReLU? Draw a plot of it for values from -2 to +2.
 #### É uma função que basicamente substitui cada número negativo por 0.
