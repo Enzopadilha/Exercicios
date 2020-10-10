@@ -1,9 +1,9 @@
 # Exercicios
 1. How is a grayscale image represented on a computer? How about a color image?
-Uma imagem em preto e branco é representada em um byte para cada pixel. A imagem colorida necessita de mais informações para cada pixel, a representação mais comum é utilizando o RGB(Red,Green,Blue).
+# Uma imagem em preto e branco é representada em um byte para cada pixel. A imagem colorida necessita de mais informações para cada pixel, a representação mais comum é utilizando o RGB(Red,Green,Blue).
 
 2. How are the files and folders in the MNIST_SAMPLE dataset structured? Why?
-O conjunto de dados MNIST_SAMPLE está separado em pastas para o conjunto de treino e conjunto de validação. Essas pastas contém imagens de 3's e 7's separadas.
+# O conjunto de dados MNIST_SAMPLE está separado em pastas para o conjunto de treino e conjunto de validação. Essas pastas contém imagens de 3's e 7's separadas.
 
 3. Explain how the “pixel similarity” approach to classifying digits works.
 Acontece que queremos achar o valor médio para cada pixel de uma imagem.O resultado será um valor para cada pixel ou uma única imagem. Primeiramente, devemos calcular a média dos valores dos pixels para cada posição do pixel. Geralmente,quando as imagens são do tipo float, elas requerem um número entre 0 e 1, após divido ele por 255.
